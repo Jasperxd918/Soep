@@ -12,7 +12,7 @@ namespace Soep
 {
     class Soep_classes
     {
-        MySqlConnection _mssCon = new MySqlConnection("Server = localhost; Database=SoepDB;Uid=root;Pwd=;");
+        MySqlConnection _mssCon = new MySqlConnection("Server=localhost;Database=SoepDB;Uid=root;Pwd=;");
 
         public DataTable Inloggen()
         {
@@ -23,8 +23,8 @@ namespace Soep
                 _mssCon.Open();
                 if (_mssCon.State == ConnectionState.Open)
                 {
-                    MySqlCommand mssCommand = new MySqlCommand("SELECT * FROM jasper;", _mssCon);
-            dtResult.Load(mssCommand.ExecuteReader());
+                    MySqlCommand mssCommand = new MySqlCommand("SELECT * FROM SoepDB;", _mssCon);
+                    dtResult.Load(mssCommand.ExecuteReader());
                 }
     }
             catch (Exception ex)
