@@ -12,9 +12,9 @@ namespace Soep
 {
     class Soep_classes
     {
-        MySqlConnection _mssCon = new MySqlConnection("Server=localhost;Database=SoepDB;Uid=root;Pwd=;");
+        MySqlConnection _mssCon = new MySqlConnection("Server=localhost;Database=soep;Uid=root;");
 
-        public DataTable Inloggen()
+        public DataTable Inloggen(string sNaam, string sPassword)
         {
             DataTable dtResult = new DataTable();
 
@@ -23,8 +23,10 @@ namespace Soep
                 _mssCon.Open();
                 if (_mssCon.State == ConnectionState.Open)
                 {
-                    MySqlCommand mssCommand = new MySqlCommand("SELECT * FROM SoepDB;", _mssCon);
+                    MySqlCommand mssCommand = new MySqlCommand("SELECT * FROM SoepDB WHERE Name='@naam' AND Password='@Password';", _mssCon);
                     dtResult.Load(mssCommand.ExecuteReader());
+                    mssCommand.Parameters.AddWithValue("@Naam",sNaam);
+                    mssCommand.Parameters.AddWithValue("@Password", sPassword);
                 }
     }
             catch (Exception ex)

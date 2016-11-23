@@ -35,6 +35,30 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\v45\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="mysql.data">
+      <HintPath>..\packages\v45\mysql.data.dll</HintPath>
+    </Reference>
+    <Reference Include="mysql.data.entity">
+      <HintPath>..\packages\v45\mysql.data.entity.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Debugger">
+      <HintPath>..\packages\v45\MySql.Debugger.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Debugger.VisualStudio">
+      <HintPath>..\packages\v45\MySql.Debugger.VisualStudio.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Parser">
+      <HintPath>..\packages\v45\MySql.Parser.dll</HintPath>
+    </Reference>
+    <Reference Include="mysql.visualstudio">
+      <HintPath>..\packages\v45\mysql.visualstudio.dll</HintPath>
+    </Reference>
+    <Reference Include="mysql.web">
+      <HintPath>..\packages\v45\mysql.web.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
