@@ -1,1 +1,16 @@
 C:\Users\isonofgod\Documents\GitHub\Soep\Soep\Soep\bin\Debug\Soep.exe.config
+C:\Users\isonofgod\Documents\GitHub\Soep\Soep\Soep\bin\Debug\Soep.exe
+C:\Users\isonofgod\Documents\GitHub\Soep\Soep\Soep\bin\Debug\Soep.pdb
+C:\Users\isonofgod\Documents\GitHub\Soep\Soep\Soep\obj\Debug\Soep.csprojResolveAssemblyReference.cache
+C:\Users\isonofgod\Documents\GitHub\Soep\Soep\Soep\obj\Debug\MainWindow.g.cs
+C:\Users\isonofgod\Documents\GitHub\Soep\Soep\Soep\obj\Debug\SoepZiek.g.cs
+C:\Users\isonofgod\Documents\GitHub\Soep\Soep\Soep\obj\Debug\App.g.cs
+C:\Users\isonofgod\Documents\GitHub\Soep\Soep\Soep\obj\Debug\Soep_MarkupCompile.cache
+C:\Users\isonofgod\Documents\GitHub\Soep\Soep\Soep\obj\Debug\Soep_MarkupCompile.lref
+C:\Users\isonofgod\Documents\GitHub\Soep\Soep\Soep\obj\Debug\MainWindow.baml
+C:\Users\isonofgod\Documents\GitHub\Soep\Soep\Soep\obj\Debug\SoepZiek.baml
+C:\Users\isonofgod\Documents\GitHub\Soep\Soep\Soep\obj\Debug\Soep.g.resources
+C:\Users\isonofgod\Documents\GitHub\Soep\Soep\Soep\obj\Debug\Soep.Properties.Resources.resources
+C:\Users\isonofgod\Documents\GitHub\Soep\Soep\Soep\obj\Debug\Soep.csproj.GenerateResource.Cache
+C:\Users\isonofgod\Documents\GitHub\Soep\Soep\Soep\obj\Debug\Soep.exe
+C:\Users\isonofgod\Documents\GitHub\Soep\Soep\Soep\obj\Debug\Soep.pdb

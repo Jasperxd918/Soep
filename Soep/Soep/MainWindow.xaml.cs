@@ -24,5 +24,17 @@ namespace Soep
         {
             InitializeComponent();
         }
+
+        private void BtLogin_Click(object sender, RoutedEventArgs e)
+        {
+            string password = TBWachtwoord.Password;
+            SoepZiek soep = new SoepZiek();
+            if (TBNaam.Text==password)
+            {
+                soep.Show();
+                this.Close();
+            }
+           
+        }
     }
 }
