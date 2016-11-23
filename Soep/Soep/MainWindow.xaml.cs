@@ -25,16 +25,20 @@ namespace Soep
             InitializeComponent();
         }
 
-        Soep_classes SoepClass = new Soep_classes;
+        Soep_classes SoepClass = new Soep_classes();
 
         private void BtLogin_Click(object sender, RoutedEventArgs e)
         {
-            string password = TBWachtwoord.Password;
+   
             SoepZiek soep = new SoepZiek();
-            if (TBNaam.Text==password)
+            
+           
+            SoepClass.Inloggen(TBNaam.Text,TBWachtwoord.Password);
+
+            if (TBNaam.Text=="JE MOEDER IS EEN HOER")
             {
                 soep.Show();
-                SoepClass.Inloggen(sNaam);
+                
                 this.Close();
             }
            
