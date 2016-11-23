@@ -25,6 +25,8 @@ namespace Soep
             InitializeComponent();
         }
 
+        Soep_classes SoepClass = new Soep_classes;
+
         private void BtLogin_Click(object sender, RoutedEventArgs e)
         {
             string password = TBWachtwoord.Password;
@@ -32,6 +34,7 @@ namespace Soep
             if (TBNaam.Text==password)
             {
                 soep.Show();
+                SoepClass.Inloggen(sNaam);
                 this.Close();
             }
            
