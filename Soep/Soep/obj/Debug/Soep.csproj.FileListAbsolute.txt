@@ -14,3 +14,4 @@ C:\Users\isonofgod\Documents\GitHub\Soep\Soep\Soep\obj\Debug\Soep.Properties.Res
 C:\Users\isonofgod\Documents\GitHub\Soep\Soep\Soep\obj\Debug\Soep.csproj.GenerateResource.Cache
 C:\Users\isonofgod\Documents\GitHub\Soep\Soep\Soep\obj\Debug\Soep.exe
 C:\Users\isonofgod\Documents\GitHub\Soep\Soep\Soep\obj\Debug\Soep.pdb
+C:\Users\Ron\Documents\GitHub\Soep\Soep\Soep\bin\Debug\Soep.exe.config
