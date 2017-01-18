@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Soep"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Inloggen" Height="292" Width="525">
     <Grid>
-        
+        <TextBox x:Name="tbGebruikersnaam" HorizontalAlignment="Left" Height="23" Margin="244,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox x:Name="tbWachtwoord" HorizontalAlignment="Left" Margin="244,143,0,0" VerticalAlignment="Top" Width="120" Height="23"/>
+        <Label x:Name="lbNaam" Content="Gebruikersnaam" HorizontalAlignment="Left" Margin="144,97,0,0" VerticalAlignment="Top" Width="95" Height="25"/>
+        <Label x:Name="lbWachtwoord" Content="Wachtwoord" HorizontalAlignment="Left" Margin="144,141,0,0" VerticalAlignment="Top" Height="25"/>
+
     </Grid>
 </Window>
