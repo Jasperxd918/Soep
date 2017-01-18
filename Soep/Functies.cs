@@ -4,12 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using MySql.Data.MySqlClient;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows;
 
 namespace Soep
 {
     class Functies
     {
-        public DataRow Inloggen(int iID)
+        MySqlConnection _mssCon = new MySqlConnection("Server=81.207.39.183;Database=Soep;Uid=root;Pwd=soepski;");
+
+        public DataRow Inloggen(string sGebruikersnaam, string sPassword)
         {
             DataTable dtResult = new DataTable();
 
@@ -18,8 +24,9 @@ namespace Soep
                 _mssCon.Open();
                 if (_mssCon.State == ConnectionState.Open)
                 {
-                    MySqlCommand mssCommand = new MySqlCommand("SELECT * FROM jasper WHERE ID=@ID;", _mssCon);
-                    mssCommand.Parameters.AddWithValue("@ID", iID);
+                    MySqlCommand mssCommand = new MySqlCommand("SELECT gebruikersnaam, wachtwoord FROM gebruikers WHERE gebruikersnaam = @Gebruikersnaam", _mssCon);
+                    mssCommand.Parameters.AddWithValue("@Gebruikersnaam", sGebruikersnaam);
+                    mssCommand.Parameters.AddWithValue("@Wachtwoord", sPassword);
                     dtResult.Load(mssCommand.ExecuteReader());
                 }
             }
@@ -33,8 +40,15 @@ namespace Soep
                 _mssCon.Close();
             }
 
+            var x = dtResult.Rows[0];
+            var username = x["gebruikersnaam"].ToString();
+            var password = x["wachtwoord"].ToString();
+            if (password == sPassword)
+            {
+                return dtResult.Rows[0];
+            }
 
-            return dtResult.Rows[0];
+            
         }
     }
 }

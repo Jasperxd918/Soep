@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data;
 
 namespace Soep
 {
@@ -20,9 +21,27 @@ namespace Soep
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        Functies FunctieClass = new Functies();
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btnInloggen_Click(object sender, RoutedEventArgs e)
+        {
+            if (tbGebruikersnaam.Text == "" || tbWachtwoord.Password == "")
+            {
+                MessageBox.Show("Je hebt je gebruikersnaam of wachtwoord niet ingevuld");
+            }
+            else
+            {
+                string sGebruikersnaam = tbGebruikersnaam.Text;
+                string sPassword = tbWachtwoord.Password;
+                DataRow dr = FunctieClass.Inloggen(sGebruikersnaam, sPassword);
+            }
+           
         }
     }
 }
