@@ -13,7 +13,7 @@ namespace Soep
 {
     class Functies
     {
-        MySqlConnection _mssCon = new MySqlConnection("Server=81.207.39.183;Database=Soep;Uid=root;Pwd=soepski;");
+        MySqlConnection _mssCon = new MySqlConnection("Server=localhost;Database=Soep;Uid=root;Pwd=;");
 
         public DataRow Inloggen(string sGebruikersnaam, string sPassword)
         {
@@ -43,12 +43,14 @@ namespace Soep
             var x = dtResult.Rows[0];
             var username = x["gebruikersnaam"].ToString();
             var password = x["wachtwoord"].ToString();
-            if (password == sPassword)
+
+            if (password == sPassword && username == sGebruikersnaam)
             {
-                return dtResult.Rows[0];
+                
             }
 
-            
+            return dtResult.Rows[0];
+
         }
     }
 }

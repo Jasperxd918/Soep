@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Soep"
         mc:Ignorable="d"
-        Title="Inloggen" Height="292" Width="525">
+        Title="Inloggen" Height="292" Width="573">
     <Grid>
         <TextBox x:Name="tbGebruikersnaam" HorizontalAlignment="Left" Height="23" Margin="226,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <PasswordBox x:Name="tbWachtwoord" HorizontalAlignment="Left" Margin="226,112,0,0" VerticalAlignment="Top" Width="120" Height="23"/>
