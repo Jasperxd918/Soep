@@ -39,11 +39,11 @@ namespace Soep
             {
                 string sGebruikersnaam = tbGebruikersnaam.Text;
                 string sPassword = tbWachtwoord.Password;
-                FunctieClass.Inloggen(sGebruikersnaam, sPassword);
-                if (bresult)
+                bool check = FunctieClass.Inloggen(sGebruikersnaam, sPassword);
+                if (check)
                 {
-
-                }        
+                    MessageBox.Show("je bent ingelogd");
+                }
             }
            
         }

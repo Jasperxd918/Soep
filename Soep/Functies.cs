@@ -28,6 +28,7 @@ namespace Soep
                     MySqlCommand mssCommand = new MySqlCommand("SELECT count(*) FROM `gebruikers` WHERE Gebruikersnaam=@Gebruiker AND Wachtwoord=@ww;", _mssCon);
                     mssCommand.Parameters.AddWithValue("@Gebruiker", sGebruikersnaam);
                     mssCommand.Parameters.AddWithValue("@ww", sWachtwoord);
+
                     if (mssCommand.ExecuteScalar().ToString() == "1")
                     {
                         bResult = true;
