@@ -13,7 +13,7 @@ namespace Soep
 {
     class Functies
     {
-        MySqlConnection _mssCon = new MySqlConnection("Server=localhost;Database=Soep;Uid=root;Pwd=;");
+        MySqlConnection _mssCon = new MySqlConnection("Server=81.207.39.183;Database=Soep;Uid=root;Pwd=soepski;");
 
         public DataRow Inloggen(string sGebruikersnaam, string sPassword)
         {
