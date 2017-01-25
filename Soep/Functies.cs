@@ -13,21 +13,29 @@ namespace Soep
 {
     class Functies
     {
-        MySqlConnection _mssCon = new MySqlConnection("Server=localhost;Database=Soep;Uid=root;Pwd=;");
+        MySqlConnection _mssCon = new MySqlConnection("Server=81.207.39.183;Database=Soep;Uid=root;Pwd=soepski;");
 
-        public DataRow Inloggen(string sGebruikersnaam, string sPassword)
+        public bool Inloggen(string sGebruikersnaam, string sWachtwoord)
         {
-            DataTable dtResult = new DataTable();
+            bool bResult = false;
 
             try
             {
                 _mssCon.Open();
                 if (_mssCon.State == ConnectionState.Open)
                 {
-                    MySqlCommand mssCommand = new MySqlCommand("SELECT gebruikersnaam, wachtwoord FROM gebruikers WHERE gebruikersnaam = @Gebruikersnaam", _mssCon);
-                    mssCommand.Parameters.AddWithValue("@Gebruikersnaam", sGebruikersnaam);
-                    mssCommand.Parameters.AddWithValue("@Wachtwoord", sPassword);
-                    dtResult.Load(mssCommand.ExecuteReader());
+
+                    MySqlCommand mssCommand = new MySqlCommand("SELECT count(*) FROM `gebruikers` WHERE Gebruikersnaam=@Gebruiker AND Wachtwoord=@ww;", _mssCon);
+                    mssCommand.Parameters.AddWithValue("@Gebruiker", sGebruikersnaam);
+                    mssCommand.Parameters.AddWithValue("@ww", sWachtwoord);
+                    if (mssCommand.ExecuteScalar().ToString() == "1")
+                    {
+                        bResult = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("wachtwoord is incorrect");
+                    }
                 }
             }
             catch (Exception ex)
@@ -40,17 +48,8 @@ namespace Soep
                 _mssCon.Close();
             }
 
-            var x = dtResult.Rows[0];
-            var username = x["gebruikersnaam"].ToString();
-            var password = x["wachtwoord"].ToString();
 
-            if (password == sPassword && username == sGebruikersnaam)
-            {
-                
-            }
-
-            return dtResult.Rows[0];
-
+            return bResult;
         }
     }
 }

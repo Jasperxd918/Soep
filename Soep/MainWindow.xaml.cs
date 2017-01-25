@@ -39,7 +39,11 @@ namespace Soep
             {
                 string sGebruikersnaam = tbGebruikersnaam.Text;
                 string sPassword = tbWachtwoord.Password;
-                DataRow dr = FunctieClass.Inloggen(sGebruikersnaam, sPassword);
+                FunctieClass.Inloggen(sGebruikersnaam, sPassword);
+                if (bresult)
+                {
+
+                }        
             }
            
         }
