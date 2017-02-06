@@ -9,10 +9,16 @@
     <Grid>
         <Label x:Name="lbGebruiker" Content="Gebruiker:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbGebruikersnaam" Content="gebruiker" HorizontalAlignment="Left" Margin="79,10,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbVraag" Content="Vraag" HorizontalAlignment="Left" Margin="290,149,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.505,0.5"/>
-        <RadioButton x:Name="lbAntwoordA" Content="Antwoord 1" HorizontalAlignment="Left" Margin="290,180,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="lbAntwoordB" Content="Antwoord 2" HorizontalAlignment="Left" Margin="290,200,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbaantal" Content="?/10" HorizontalAlignment="Left" Margin="574,22,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btsend" Content="Button" HorizontalAlignment="Left" Margin="290,234,0,0" VerticalAlignment="Top" Width="75" Click="btsend_Click"/>
+        <Label x:Name="lbGetalA" Content="5" HorizontalAlignment="Left" Margin="251,151,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbPlus" Content="+" HorizontalAlignment="Left" Margin="267,151,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbGetalB" Content="6" HorizontalAlignment="Left" Margin="290,151,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbIs" Content="=" HorizontalAlignment="Left" Margin="311,151,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbUitkomst" HorizontalAlignment="Left" Height="23" Margin="348,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lbNiv" Content="Niveau:" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbNiveau" Content="niveau" HorizontalAlignment="Left" Margin="60,30,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>
    

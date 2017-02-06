@@ -42,7 +42,7 @@ namespace Soep
                 bool check = FunctieClass.Inloggen(sGebruikersnaam, sPassword);
                 if (check)
                 {
-                    Schermpie schermpie = new Schermpie();
+                    Schermpie schermpie = new Schermpie(tbGebruikersnaam.Text, cbNiveau.SelectedItem.ToString());
                     schermpie.Show();
                     this.Close();
                 }

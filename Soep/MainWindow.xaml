@@ -12,6 +12,11 @@
         <Label x:Name="lbNaam" Content="Gebruikersnaam" HorizontalAlignment="Left" Margin="126,66,0,0" VerticalAlignment="Top" Width="95" Height="25"/>
         <Label x:Name="lbWachtwoord" Content="Wachtwoord" HorizontalAlignment="Left" Margin="126,110,0,0" VerticalAlignment="Top" Height="25"/>
         <Button x:Name="btnInloggen" Content="Inloggen" HorizontalAlignment="Left" Margin="226,152,0,0" VerticalAlignment="Top" Width="120" Height="23" Click="btnInloggen_Click" IsDefault="True"/>
+        <ComboBox x:Name="cbNiveau" HorizontalAlignment="Left" Margin="365,68,0,0" VerticalAlignment="Top" Width="120" Height="23">
+            <ComboBoxItem Name="Niveau1">Niveau 1</ComboBoxItem>
+            <ComboBoxItem Name="Niveau2">Niveau 2</ComboBoxItem>
+            <ComboBoxItem Name="Niveau3">Niveau 3</ComboBoxItem>
+        </ComboBox>
 
     </Grid>
 </Window>
