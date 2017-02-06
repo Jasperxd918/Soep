@@ -1,0 +1,15 @@
+﻿<Window x:Class="Soep.Cms"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Soep"
+        mc:Ignorable="d"
+        Title="Cms" Height="300" Width="300">
+    <Grid>
+        <Label x:Name="lbnaam" Content="Naam: Leerling" HorizontalAlignment="Left" Margin="94,123,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="lbvak" HorizontalAlignment="Left" Margin="94,84,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btsend" Content="Verzend" HorizontalAlignment="Left" Margin="94,178,0,0" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</Window>

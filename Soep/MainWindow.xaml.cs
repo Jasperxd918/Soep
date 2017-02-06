@@ -42,7 +42,9 @@ namespace Soep
                 bool check = FunctieClass.Inloggen(sGebruikersnaam, sPassword);
                 if (check)
                 {
-                    MessageBox.Show("je bent ingelogd");
+                    Schermpie schermpie = new Schermpie();
+                    schermpie.Show();
+                    this.Close();
                 }
             }
            

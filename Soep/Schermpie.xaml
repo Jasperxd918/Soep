@@ -1,0 +1,20 @@
+﻿<Window x:Name="schermpie" x:Class="Soep.Schermpie"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Soep"
+        mc:Ignorable="d"
+        Title="Schermpie" Height="368.293" Width="661.789" ResizeMode="NoResize" Background="White">
+    <Grid>
+        <Label x:Name="lbGebruiker" Content="Gebruiker:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbGebruikersnaam" Content="gebruiker" HorizontalAlignment="Left" Margin="79,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbVraag" Content="Vraag" HorizontalAlignment="Left" Margin="290,149,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.505,0.5"/>
+        <RadioButton x:Name="lbAntwoordA" Content="Antwoord 1" HorizontalAlignment="Left" Margin="290,180,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="lbAntwoordB" Content="Antwoord 2" HorizontalAlignment="Left" Margin="290,200,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbaantal" Content="?/10" HorizontalAlignment="Left" Margin="574,22,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
+   
+
+        
