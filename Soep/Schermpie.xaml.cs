@@ -22,13 +22,11 @@ namespace Soep
         string sUitkomst = "Nul";
         int iIndex = 0;
         int iUitkomst = 0;
-        int iFoutTijd = 5;
-        int iTijd = 60;
         string[] saSommen = File.ReadAllLines("Sommen.txt");
         public Schermpie(string sNaam, string sNiveau)
         {
             InitializeComponent();
-            lbGebruiker.Content = sNaam;
+            lbGebruikersnaam.Content = sNaam;
             lbNiveau.Content = sNiveau;
 
 
@@ -37,42 +35,18 @@ namespace Soep
 
         private void Schermpie_Load(object sender, EventArgs e)
         {
-            if (lbNiveau.Content == "Niveau 1")
-            {
-                MaakSommen(new string[] { "+" }, 1, 10);
-            }
-            else if (lbGroep.Text == "Groep 4")
-            {
-                MaakSommen(new string[] { "+", "-" }, 1, 10);
-            }
-            else if (lbGroep.Text == "Groep 5")
-            {
-                MaakSommen(new string[] { "+", "-" }, 1, 15);
-            }
-            else if (lbGroep.Text == "Groep 6")
-            {
-                MaakSommen(new string[] { "+", "-", "*", "/" }, 1, 10);
-            }
-            else if (lbGroep.Text == "Groep 7")
-            {
-                MaakSommen(new string[] { "+", "-", "*", "/" }, 1, 15);
-
-            }
-            else if (lbGroep.Text == "Groep 8")
-            {
-                MaakSommen(new string[] { "+", "-", "*", "/" }, 5, 25);
-            }
+           
         }
 
         private void MaakSommen(string[] saOperator, int iMin, int iMax)
         {
             tbUitkomst.Clear();
             iIndex = rand.Next(0, saOperator.Length);
-            lbOperator.Text = saOperator[iIndex];
+            lbOperator.Content = saOperator[iIndex];
             int iGetal1 = rand.Next(iMin, iMax);
-            lbGetal1.Text = iGetal1.ToString();
+            lbGetalA.Content = iGetal1.ToString();
             int iGetal2 = rand.Next(iMin, iMax);
-            lbGetal2.Text = iGetal2.ToString();
+            lbGetalB.Content = iGetal2.ToString();
             if (iIndex == 0)
             {
                 iUitkomst = iGetal1 + iGetal2;
@@ -94,146 +68,83 @@ namespace Soep
                 string[] substrings = sSom.Split(' ');
                 iGetal1 = Int32.Parse(substrings[0]);
                 iGetal2 = Int32.Parse(substrings[2]);
-                lbGetal1.Text = iGetal1.ToString();
-                lbGetal2.Text = iGetal2.ToString();
+                lbGetalA.Content = iGetal1.ToString();
+                lbGetalB.Content = iGetal2.ToString();
                 iUitkomst = iGetal1 / iGetal2;
                 sUitkomst = iUitkomst.ToString();
             }
         }
-
-        private void btCheck_Click(object sender, EventArgs e)
+        private void btsend_Click(object sender, RoutedEventArgs e)
         {
-            //Groep 3
-            if (tbUitkomst.Text == sUitkomst && lbGroep.Text == "Groep 3")
+            //Niveau 1
+            if (tbUitkomst.Text == sUitkomst && lbNiveau.Content.ToString() == "Niveau 1")
+                {
+                
+                    tbUitkomst.Clear();
+                    int iScore = int.Parse(lbScorePunt.Content.ToString());
+                    iScore++;
+                    string sScore = iScore.ToString();
+                    lbScorePunt.Content = sScore;
+                    MaakSommen(new string[] { "+" }, 1, 10);
+                }
+
+                else if (tbUitkomst.Text != sUitkomst && lbNiveau.Content.ToString() == "Niveau 1")
+                {
+                    tbUitkomst.Clear();
+                MessageBox.Show("Het juiste antwoord was " + iUitkomst.ToString());
+                    MaakSommen(new string[] { "+" }, 1, 10);
+                }
+
+                
+                //Niveau 2
+                else if (tbUitkomst.Text == sUitkomst && lbNiveau.Content.ToString() == "Niveau 2")
+                {
+                    tbUitkomst.Clear();
+                    int iScore = Int32.Parse(lbScorePunt.Content.ToString());
+                    iScore++;
+                    string sScore = iScore.ToString();
+                    lbScorePunt.Content = sScore;
+                    MaakSommen(new string[] { "+", "-" }, 1, 10);
+                }
+                else if (tbUitkomst.Text != sUitkomst && lbNiveau.Content.ToString() == "Niveau 2")
+                {
+
+                    tbUitkomst.Clear();
+                    MaakSommen(new string[] { "+", "-" }, 1, 10);
+                }
+                //Niveau 3
+                else if (tbUitkomst.Text == sUitkomst && lbNiveau.Content.ToString() == "Niveau 3")
+                {
+                    tbUitkomst.Clear();
+                    int iScore = Int32.Parse(lbScorePunt.Content.ToString());
+                    iScore++;
+                    string sScore = iScore.ToString();
+                    lbScorePunt.Content = sScore;
+                    MaakSommen(new string[] { "+", "-" }, 1, 15);
+                }
+                else if (tbUitkomst.Text != sUitkomst && lbNiveau.Content.ToString() == "Niveau 3")
+                {
+
+                    tbUitkomst.Clear();
+                    MaakSommen(new string[] { "+", "-" }, 1, 15);
+                }
+        }
+
+        private void schermpie_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (lbNiveau.Content.ToString() == "Niveau 1")
             {
-                tbUitkomst.Clear();
-                int iScore = Int32.Parse(lbScorePunt.Text);
-                iScore++;
-                string sScore = iScore.ToString();
-                lbScorePunt.Text = sScore;
                 MaakSommen(new string[] { "+" }, 1, 10);
             }
-            else if (tbUitkomst.Text != sUitkomst && lbGroep.Text == "Groep 3")
+
+            else if (lbNiveau.Content.ToString() == "Niveau 2")
             {
-                tbUitkomst.Clear();
-                iTijd -= 2;
-                tmFout.Start();
-                MaakSommen(new string[] { "+" }, 1, 10);
-            }
-            //Groep 4
-            else if (tbUitkomst.Text == sUitkomst && lbGroep.Text == "Groep 4")
-            {
-                tbUitkomst.Clear();
-                int iScore = Int32.Parse(lbScorePunt.Text);
-                iScore++;
-                string sScore = iScore.ToString();
-                lbScorePunt.Text = sScore;
                 MaakSommen(new string[] { "+", "-" }, 1, 10);
             }
-            else if (tbUitkomst.Text != sUitkomst && lbGroep.Text == "Groep 4")
+            else if (lbNiveau.Content.ToString() == "Niveau 3")
             {
-
-                tbUitkomst.Clear();
-                iTijd -= 2;
-                tmFout.Start();
-                MaakSommen(new string[] { "+", "-" }, 1, 10);
-            }
-            //Groep 5
-            else if (tbUitkomst.Text == sUitkomst && lbGroep.Text == "Groep 5")
-            {
-                tbUitkomst.Clear();
-                int iScore = Int32.Parse(lbScorePunt.Text);
-                iScore++;
-                string sScore = iScore.ToString();
-                lbScorePunt.Text = sScore;
                 MaakSommen(new string[] { "+", "-" }, 1, 15);
-            }
-            else if (tbUitkomst.Text != sUitkomst && lbGroep.Text == "Groep 5")
-            {
-
-                tbUitkomst.Clear();
-                iTijd -= 2;
-                tmFout.Start();
-                MaakSommen(new string[] { "+", "-" }, 1, 15);
-            }
-            //Groep 6
-            else if (tbUitkomst.Text == sUitkomst && lbGroep.Text == "Groep 6")
-            {
-                tbUitkomst.Clear();
-                int iScore = Int32.Parse(lbScorePunt.Text);
-                iScore++;
-                string sScore = iScore.ToString();
-                lbScorePunt.Text = sScore;
-                MaakSommen(new string[] { "+", "-", "*", "/" }, 1, 10);
-            }
-            else if (tbUitkomst.Text != sUitkomst && lbGroep.Text == "Groep 6")
-            {
-                tbUitkomst.Clear();
-                iTijd -= 2;
-                tmFout.Start();
-                MaakSommen(new string[] { "+", "-", "*", "/" }, 1, 10);
-            }
-            //Groep 7
-            else if (tbUitkomst.Text == sUitkomst && lbGroep.Text == "Groep 7")
-            {
-                tbUitkomst.Clear();
-                int iScore = Int32.Parse(lbScorePunt.Text);
-                iScore++;
-                string sScore = iScore.ToString();
-                lbScorePunt.Text = sScore;
-                MaakSommen(new string[] { "+", "-", "*", "/" }, 1, 15);
-            }
-            else if (tbUitkomst.Text != sUitkomst && lbGroep.Text == "Groep 7")
-            {
-                tbUitkomst.Clear();
-                iTijd -= 2;
-                tmFout.Start();
-                MaakSommen(new string[] { "+", "-", "*", "/" }, 1, 15);
-            }
-            //Groep 8
-            else if (tbUitkomst.Text == sUitkomst && lbGroep.Text == "Groep 8")
-            {
-                tbUitkomst.Clear();
-                int iScore = Int32.Parse(lbScorePunt.Text);
-                iScore++;
-                string sScore = iScore.ToString();
-                lbScorePunt.Text = sScore;
-                MaakSommen(new string[] { "+", "-", "*", "/" }, 5, 25);
-            }
-            else if (tbUitkomst.Text != sUitkomst && lbGroep.Text == "Groep 8")
-            {
-                tbUitkomst.Clear();
-                iTijd -= 2;
-                tmFout.Start();
-                MaakSommen(new string[] { "+", "-", "*", "/" }, 5, 25);
-            }
+            }  
         }
-
-        private void tbUitkomst_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                btCheck_Click(this, new EventArgs());
-            }
-        }
-
-        private void tmFout_Tick(object sender, EventArgs e)
-        {
-            iFoutTijd--;
-            if (iFoutTijd > 0)
-            {
-                pbFout.Visible = true;
-                lbFout.Visible = true;
-            }
-            else if (iFoutTijd == 0)
-            {
-                pbFout.Visible = false;
-                lbFout.Visible = false;
-                tmFout.Stop();
-                iFoutTijd = 20;
-            }
-        }
-
-
-    }
+    } 
 }

@@ -5,17 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Soep"
         mc:Ignorable="d"
-        Title="Schermpie" Height="368.293" Width="661.789" ResizeMode="NoResize" Background="White">
+        Title="Schermpie" Height="368.293" Width="661.789" ResizeMode="NoResize" Background="White" Loaded="schermpie_Loaded">
     <Grid>
         <Label x:Name="lbGebruiker" Content="Gebruiker:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbGebruikersnaam" Content="gebruiker" HorizontalAlignment="Left" Margin="79,10,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbaantal" Content="?/10" HorizontalAlignment="Left" Margin="574,22,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btsend" Content="Button" HorizontalAlignment="Left" Margin="290,234,0,0" VerticalAlignment="Top" Width="75" Click="btsend_Click"/>
-        <Label x:Name="lbGetalA" Content="5" HorizontalAlignment="Left" Margin="251,151,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbPlus" Content="+" HorizontalAlignment="Left" Margin="267,151,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbGetalB" Content="6" HorizontalAlignment="Left" Margin="290,151,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbIs" Content="=" HorizontalAlignment="Left" Margin="311,151,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbUitkomst" HorizontalAlignment="Left" Height="23" Margin="348,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lbScorePunt" Content="0" HorizontalAlignment="Left" Margin="574,22,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btCheck" Content="Controleer" HorizontalAlignment="Left" Margin="416,160,0,0" VerticalAlignment="Top" Width="75" Click="btsend_Click" IsDefault="True"/>
+        <Label x:Name="lbGetalA" Content="5" HorizontalAlignment="Left" Margin="178,154,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbOperator" Content="+" HorizontalAlignment="Left" Margin="194,154,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbGetalB" Content="6" HorizontalAlignment="Left" Margin="217,154,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbIs" Content="=" HorizontalAlignment="Left" Margin="238,154,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbUitkomst" HorizontalAlignment="Left" Height="23" Margin="275,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="lbNiv" Content="Niveau:" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbNiveau" Content="niveau" HorizontalAlignment="Left" Margin="60,30,0,0" VerticalAlignment="Top"/>
 
